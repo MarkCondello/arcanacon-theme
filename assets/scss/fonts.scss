@@ -1,0 +1,37 @@
+@import "fa-fonts.css";
+ 
+@font-face {
+    font-family: 'SuperclarendonRegular';
+    src: url('../fonts/SuperclarendonRg.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/SuperclarendonRg.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/SuperclarendonRg.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/SuperclarendonRg.woff') format('woff'), /* Pretty Modern Browsers */
+          url('../fonts/SuperclarendonRg.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+.ff-super-reg {
+    font-family: 'SuperclarendonRegularRegular';
+ }
+
+@font-face {
+    font-family: 'SuperclarendonRegularBold';
+    src: url('../fonts/SuperclarendonRg-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/SuperclarendonRg-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/SuperclarendonRg-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/SuperclarendonRg-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+          url('../fonts/SuperclarendonRg-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+.ff-super-bold {
+    font-family: 'SuperclarendonRegularBold';
+ }
+
+@font-face {
+    font-family: 'MyriadProRegular';
+    src: url('../fonts/Myriad_Pro_Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Myriad_Pro_Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/Myriad_Pro_Regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('../fonts/Myriad_Pro_Regular.woff') format('woff'), /* Pretty Modern Browsers */
+            url('../fonts/Myriad_Pro_Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+            url('../fonts/Myriad_Pro_Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}

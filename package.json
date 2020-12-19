@@ -1,0 +1,43 @@
+{
+  "name": "jointswp-sass",
+  "version": "5.0.0",
+  "description": "A WordPress starter theme using Foundation 6",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeremyEnglert/JointsWP.git"
+  },
+  "author": "Jeremy Englert",
+  "license": "GPL-2.0 AND MIT",
+  "homepage": "https://github.com/JeremyEnglert/JointsWP",
+  "devDependencies": {
+    "@wordpress/block-editor": "^5.1.5",
+    "@wordpress/scripts": "^12.5.0",
+    "chokidar": "^3.4.3",
+    "foundation-sites": "^6.5.3",
+    "jquery": "^3.5.1",
+    "jshint-stylish": "^2.0.0",
+    "laravel-mix": "^5.0.9",
+    "laravel-mix-purgecss": "^5.0.0",
+    "motion-ui": "^1.2.2",
+    "node-sass": "^4.14.1",
+    "postcss": "^8.2.1",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.27.0",
+    "sass-loader": "^8.0.0",
+    "vue-template-compiler": "^2.6.12",
+    "what-input": "^5.2.10"
+  },
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "update-foundation": "npm install foundation-sites",
+    "build:scripts": "wp-scripts build",
+    "build": "run-p \"build:*\"",
+    "start-build": "wp-scripts start"
+  }
+}
