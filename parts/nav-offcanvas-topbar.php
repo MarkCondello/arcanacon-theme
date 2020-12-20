@@ -9,7 +9,12 @@
 <div class="top-bar" id="top-bar-menu">
 	<div class="top-bar-left float-left">
 		<ul class="menu">
-			<li><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
+			<li>
+				<a class="logo" href="<?php echo home_url(); ?>">
+ 				<img src="<?= get_theme_file_uri('/assets/images/logos/arcanacon.png'); ?>" width="100" alt="Arcanacon logo."/>
+					<span>rcanacon</span>
+				</a>
+			</li>
 		</ul>
 	</div>
 	<div class="top-bar-right show-for-medium">

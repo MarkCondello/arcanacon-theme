@@ -25,6 +25,7 @@
 		<?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) { ?>
 			<!-- Icons & Favicons -->
 			<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+			<!-- ToDo: Change this icon below -->
 			<link href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-touch-icon" />	
 	    <?php } ?>
 
@@ -42,11 +43,7 @@
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
 			
 			<div class="off-canvas-content" data-off-canvas-content>
-				
-				<header class="header" role="banner">
-							
-					 <!-- This navs will be applied to the topbar, above all content 
-						  To see additional nav styles, visit the /parts directory -->
+				<header class="header">		
+					 <!-- This navs will be applied to the topbar, above all content -->
 					 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
-	 	
 				</header> <!-- end .header -->

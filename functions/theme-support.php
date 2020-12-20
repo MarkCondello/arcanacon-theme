@@ -2,7 +2,7 @@
 	
 
 //This filter shows the maintenance template
-add_filter( 'template_include', 'show_maintenance_page', 99 );
+//add_filter( 'template_include', 'show_maintenance_page', 99 );
 function show_maintenance_page( $template ) {
     if ( !current_user_can( 'edit_themes' ) || !is_user_logged_in() ){
         $new_template = locate_template( array( 'maintenance-template.php' ) );
@@ -20,7 +20,7 @@ function joints_theme_support() {
 	add_theme_support( 'post-thumbnails' );
 	
 	// Default thumbnail size
-	set_post_thumbnail_size(125, 125, true);
+	set_post_thumbnail_size(1200, 1200, true);
 
 	// Add RSS Support
 	add_theme_support( 'automatic-feed-links' );
@@ -142,6 +142,7 @@ function arcanacon_blocks()
 	wp_enqueue_style( 'arcanacon-blocks-styles-editor', get_template_directory_uri() . '/public/css/blocks/editor.css', array(), filemtime(get_template_directory() . '/src/scss'), 'all' );
 
 
+	//ToDo: This below should be a loop from an array of blockNames
 	register_block_type(
 		'arcanacon/custom-cta', 
 		array(
@@ -157,7 +158,6 @@ function arcanacon_blocks()
 		)
 	);
 }
-
 add_action('init', 'arcanacon_blocks'); 
 
 

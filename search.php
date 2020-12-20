@@ -9,7 +9,7 @@ get_header(); ?>
 			
 	<div class="content">
 
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
+		<div class="inner-content grid-x grid-margin-x grid-padding-x align-center">
 	
 			<main class="main small-12 medium-8 large-8 cell" role="main">
 				<header>
@@ -31,10 +31,7 @@ get_header(); ?>
 						
 			    <?php endif; ?>
 	
-		    </main> <!-- end #main -->
-		
-		    <?php get_sidebar(); ?>
-		
+		    </main> <!-- end #main -->		
 		</div> <!-- end #inner-content -->
 
 	</div> <!-- end #content -->

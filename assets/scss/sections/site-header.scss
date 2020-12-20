@@ -1,0 +1,28 @@
+.top-bar {
+
+    .logo {
+        img {
+            margin-top: -15px;
+        }
+        span {
+            font-family: 'SuperclarendonRegularBold'; 
+            font-size: 2.35rem;
+            text-shadow: -2px 2px $white;
+            margin-left: -20px;
+            /* padding-top: 25px; */
+            z-index: 11;
+            letter-spacing: .05px;
+            display: inline-block;
+            color: $primary-color;
+        }
+    }
+
+    .top-bar-right {
+        .menu {
+            a {
+                color: $primary-color;
+                font-weight: 700;
+            }
+        }
+    }
+}
