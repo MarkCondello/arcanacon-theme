@@ -19,7 +19,7 @@ if(count($allEvents)):
             $strDate = strtotime($dateArray[2] . '-' . $dateArray[1] . '-' . $dateArray[0]);
             if($strDate > strtotime($today)):
                 $event['event_date_strtime'] = $strDate;
-                $event['event_date'] = date("jS F, Y", strtotime($eventDate));
+                $event['event_date'] = date("jS F, Y", $strDate);
                 $event['event_thumbnail'] = get_field('event_thumbnail', $event['ID']); 
                 array_push($futureEvents, $event); 
             endif;

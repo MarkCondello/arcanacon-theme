@@ -1,6 +1,6 @@
 .home {
     .banner {
-        height: 100vh;
+        height: 85vh;
         background-size: cover!important;
         padding: 2rem 0;
         color: $arc-white;
@@ -32,11 +32,21 @@
 
          .banner-content {
             position: relative;
-            display: inline-flex;
-            height: 100%;
+             height: 100%;
             flex-direction: column;
             justify-content: space-between;
              z-index: 2;
          }
+    }
+    .banner-abstract{
+        height: 15vh;
+        background-color: $arc-purple;
+        color: $arc-white;
+        .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 }
