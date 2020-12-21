@@ -9484,3 +9484,23 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
+
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url("../fonts/fontawesome-pro/fa-brands-400.eot");
+  src: url("../fonts/fontawesome-pro/fa-brands-400.eot?#iefix") format("embedded-opentype"), 
+  url("../fonts/fontawesome-pro/fa-brands-400.woff2") format("woff2"), 
+  url("../fonts/fontawesome-pro/fa-brands-400.woff") format("woff"), 
+  url("../fonts/fontawesome-pro/fa-brands-400.ttf") format("truetype"), 
+  url("../fonts/fontawesome-pro/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+.fa,
+.fab {
+  font-family: 'Font Awesome 5 Brands';
+  font-weight: 500;
+}
+ 

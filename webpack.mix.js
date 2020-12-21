@@ -20,6 +20,7 @@ mix
     .sass('assets/scss/site.scss', 'public/css')
     .sass('src/scss/editor.scss', 'public/css/blocks')
     .copy('assets/fonts/', 'public/fonts/')
+    .copy('assets/scss/images/', 'public/images/')
 
     .combine
     ([

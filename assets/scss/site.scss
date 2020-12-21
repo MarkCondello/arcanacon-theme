@@ -8,13 +8,16 @@
 
 @import './globals/helpers';
 
+@import './globals/ctas';
 // @import './globals/typography';
 
 
 @import "pages/home";
 //  @import "pages/single";
 
-  @import "sections/site-header";
+@import "sections/site-header",
+"sections/footer.scss";
+
 // @import "sections/off-canvas";
 
 // @import "components/panel";

@@ -14,15 +14,15 @@ include get_theme_file_path('/parts/get-future-events.php');
 		<div class="banner" style="background-image: url('<?= $futureEvents[0]['banner_image'] ?>');">
 			<div class="banner-content">
 				<div class="grid-container h-100">
-					<div class="grid-y align-justify h-100">
-						<div class="small-10"> 
-							<h1><?= $futureEvents[0]['post_title'] ?></h1>
-							<p>
+					<div class="grid-y grid-padding-y align-justify h-100">
+						<div class="small-9 cell"> 
+							<h1 class="l-height-1"><?= $futureEvents[0]['post_title'] ?></h1>
+							<p class="ff-super-reg">
 								<i class="fal fa-calendar-alt"></i>
 								<?= $futureEvents[0]['event_date'] ?>
 							</p>
 						</div>
-						<div class="small-2"> 
+						<div class="small-3 cell"> 
 							<?php if(!empty($futureEvents[0]['cta_text']) &&  !empty($futureEvents[0]['cta_link'])): ?>
 								<a href="<?= $futureEvents[0]['cta_link'] ?>" target="_blank" class="cta">
 									<?= $futureEvents[0]['cta_text'] ?>
@@ -32,7 +32,6 @@ include get_theme_file_path('/parts/get-future-events.php');
 						</div>
 					</div>
 				</div>
-			 
 			</div>	
 		</div>
 		<div class="banner-abstract p-y-2">
@@ -65,24 +64,22 @@ include get_theme_file_path('/parts/get-future-events.php');
 		</div>
 <?php if(count($futureEvents) > 1): ?>
 		<div class="bg-colour-beige future-events">
-			<div class="grid-container">
-			
+			<div class="grid-container">	
 <?php
 	foreach($futureEvents as $key=>$event):
 		if($key > 0 ):
 			if($key % 2 === 1): ?>
-
 				<div class="grid-x grid-padding-x align-middle">
 					<div class="small-12 medium-4 cell">
 						<img class="event-thumb p-2" src="<?= $event['event_thumbnail'] ?>" alt="<?= $event['post_title']; ?>'s thumbnail" />
 					</div>
 					<div class="small-12 medium-8 cell">
 						<h3><?= $event['post_title']; ?></h3>
-						<p>
+						<p class="ff-super-reg">
 							<i class="fal fa-calendar-alt"></i>
 							<?= $event['event_date'] ?>
 						</p>
-						<hr>
+						<hr class="border-colour-primary">
 						<p class="m-0">
 							<span class="bold">Synopsis: </span><?= mb_strimwidth($event['post_excerpt'] , 0, 3000, '...') ?>
 							<a class="bold" href="<?= $event['guid']; ?>">read more</a>
@@ -91,13 +88,13 @@ include get_theme_file_path('/parts/get-future-events.php');
 				</div>
 			<?php else: ?>
 				<div class="grid-x grid-padding-x align-middle">
-				<div class="small-12 medium-8 cell">
+					<div class="small-12 medium-8 cell">
 						<h3><?= $event['post_title']; ?></h3>
-						<p>
+						<p class="ff-super-reg">
 							<i class="fal fa-calendar-alt"></i>
 							<?= $event['event_date'] ?>
 						</p>
-						<hr>
+						<hr class="border-colour-primary">
 						<p class="m-0">
 							<span class="bold">Synopsis: </span><?= mb_strimwidth($event['post_excerpt'] , 0, 3000, '...') ?>
 							<a class="bold" href="<?= $event['guid']; ?>">read more</a>
@@ -109,22 +106,20 @@ include get_theme_file_path('/parts/get-future-events.php');
 				</div>
 			<?php endif;
 		endif;
-	endforeach;
-?>
+	endforeach; ?>
 				
 		</div>
 	</div>
-	<?php endif; 
-		echo "<pre>";
-			var_dump($futureEvents);
-		echo "</pre>";
+<?php endif; 
+	// echo "<pre>";
+	// 	var_dump($futureEvents);
+	// echo "</pre>";
 	else :   ?>
 	<div class="inner-content grid-x grid-margin-x grid-padding-x">
 		<main class="main small-12 cell" role="main">
 		<?php get_template_part( 'parts/content', 'missing' ); ?>
 		</main>  
 	</div> <!-- end #inner-content -->
-
-	<?php endif; ?>															
+<?php endif; ?>															
 	</div> <!-- end #content -->
 <?php get_footer(); ?>

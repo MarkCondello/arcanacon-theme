@@ -47,6 +47,10 @@ $darker-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.4);
     .bg-colour-#{$colour} {
         background-color: $value;
     }
+
+    .border-colour-#{$colour}{
+        border-color: $value;
+    }
 }
 
 @mixin horizontal-gradient-l2r($color){
@@ -54,5 +58,5 @@ $darker-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.4);
 }
 
 @mixin horizontal-gradient-r2l($color){
-    background: linear-gradient(90deg, rgba(0,0,0,0) 100%, $color 0%,);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, $color 100%,);
 }

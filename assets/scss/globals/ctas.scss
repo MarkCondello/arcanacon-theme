@@ -1,15 +1,18 @@
-//.-arrow-cta {
-//    color: $fl-blue;
-//    position: relative;
-//    padding-left: 1.5rem;
-//
-//    &:before{
-//        @include fontawe;
-//        content: fa-content($fa-var-long-arrow-right);
-//        color: $fl-blue;
-//        position: absolute;
-//        left: 0;
-//        top: 0;
-//    }
-//}
+.cta {
+    min-width: 300px;
+    background-color: $arc-pink;
+    padding: 1rem;
+    text-align: center;
+    font-family: 'SuperclarendonRegular';
+    color: $arc-white;
+    font-size: 1.65rem;
+    border: 2px solid $arc-pink;
+    transition: all .5s;
+    display: inline-block;
+
+    &:hover {
+        background-color: transparent;
+        color: $arc-pink;
+    }
+}
 
