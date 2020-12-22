@@ -17,7 +17,7 @@
         height: 100%;
         left: 0;
         z-index: 2;
-        background-color: rgba($arc-purple, .65);
+        background-color: rgba($arc-purple, .75);
     }
 
     .content {
@@ -43,12 +43,12 @@
     
         &:before {
             left: 0;
-            @include horizontal-gradient-l2r(rgba($arc-pink, .75));
+            @include horizontal-gradient-l2r(rgba($arc-pink, .85));
         }
     
         &:after {
             right: 0;
-            @include horizontal-gradient-r2l(rgba($arc-pink, .75));
+            @include horizontal-gradient-r2l(rgba($arc-pink, .85));
         }
 
         .-inner {

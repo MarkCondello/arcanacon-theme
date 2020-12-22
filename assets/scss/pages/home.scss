@@ -1,6 +1,8 @@
 .home {
+    .banner-container {
+        height: calc(100vh - 150px);
     .banner {
-        height: 85vh;
+        height: 85%;
         background-size: cover!important;
         padding: 2rem 0;
         color: $arc-white;
@@ -39,7 +41,7 @@
          }
     }
     .banner-abstract{
-        height: 15vh;
+        height: 15%;
         background-color: $arc-purple;
         color: $arc-white;
         .content {
@@ -49,4 +51,5 @@
             justify-content: center;
         }
     }
+}
 }

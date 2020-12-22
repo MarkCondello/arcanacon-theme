@@ -11,7 +11,7 @@
 		<ul class="menu">
 			<li>
 				<a class="logo" href="<?php echo home_url(); ?>">
- 				<img src="<?= get_theme_file_uri('/assets/scss/images/logos/arcanacon.png'); ?>" width="100" alt="Arcanacon logo."/>
+ 				<img src="<?= get_theme_file_uri('/assets/scss/images/logos/arcanacon.png'); ?>" alt="Arcanacon logo."/>
 					<span>rcanacon</span>
 				</a>
 			</li>

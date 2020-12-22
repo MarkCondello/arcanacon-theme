@@ -22,3 +22,12 @@
 
 // @import "components/panel";
 // @import "components/hamburger";
+
+body {
+    padding-top: 0px;
+    transition: padding-top .5s;
+    
+    &.header-fixed {
+        padding-top: 100px;
+    }
+}

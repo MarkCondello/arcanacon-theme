@@ -20,6 +20,7 @@
 				</div>
 
 				<footer class="footer" role="contentinfo">
+					<div class="grid-container"> 
 					<div class="inner-footer grid-x grid-margin-x grid-padding-x">
 						<div class="small-12 cell">
 							<div class="socials-container"> 
@@ -50,6 +51,7 @@
 							</div>
 	    				</div>
 					</div> <!-- end #inner-footer -->
+					</div>
 				</footer> <!-- end .footer -->
 			</div>  <!-- end .off-canvas-content -->		
 		</div> <!-- end .off-canvas-wrapper -->

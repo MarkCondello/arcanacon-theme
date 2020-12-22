@@ -1,12 +1,47 @@
+header.header {
+    position: relative;
+
+    &.shrink {
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        z-index: 11;
+
+        .top-bar{ 
+            transition: all .5s;
+            padding: .5rem;
+            max-height: 150px;
+
+            .logo {
+                img {
+                    width: 75px;
+                    transition: all .5s;
+
+                }
+                span {
+                    font-size: 30px;
+                    transition: all .5s;
+
+                }
+            }
+        }
+    }
+}
 .top-bar {
+    transition: all .5s;
+    max-height: 150px;
 
     .logo {
         img {
+            width: 100px;
             margin-top: -15px;
+            transition: all .5s;
+
         }
         span {
             font-family: 'SuperclarendonRegularBold'; 
-            font-size: 2.35rem;
+            font-size: 40px;
             text-shadow: -2px 2px $white;
             margin-left: -20px;
             /* padding-top: 25px; */
@@ -14,6 +49,8 @@
             letter-spacing: .05px;
             display: inline-block;
             color: $primary-color;
+            transition: all .5s;
+
         }
     }
 
@@ -22,6 +59,7 @@
             a {
                 color: $primary-color;
                 font-weight: 700;
+                font-size: 1.5rem;
             }
         }
     }

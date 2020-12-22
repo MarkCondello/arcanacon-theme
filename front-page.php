@@ -11,6 +11,7 @@ include get_theme_file_path('/parts/get-future-events.php');
 	<div class="content">
 	<?php
 	if($futureEvents):?>
+	<div class="banner-container"> 
 		<div class="banner" style="background-image: url('<?= $futureEvents[0]['banner_image'] ?>');">
 			<div class="banner-content">
 				<div class="grid-container h-100">
@@ -48,6 +49,7 @@ include get_theme_file_path('/parts/get-future-events.php');
 				</div>
 			</div>
 		</div>
+	</div>
 		<div class="grid-container">
 			<div class="grid-x">
 				<div class="small-12">
