@@ -12,7 +12,7 @@
 			<li>
 				<a class="logo" href="<?php echo home_url(); ?>">
  				<img src="<?= get_theme_file_uri('/assets/scss/images/logos/arcanacon.png'); ?>" alt="Arcanacon logo."/>
-					<span>rcanacon</span>
+					<span class="show-for-large">rcanacon</span>
 				</a>
 			</li>
 		</ul>

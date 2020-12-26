@@ -66,7 +66,7 @@ header.header {
     
         }
 
-        @include breakpoint(medium down){
+        @include breakpoint(small down){
             .top-bar-left, 
             .top-bar-right {
                 flex: 0 0 100%;
@@ -74,13 +74,13 @@ header.header {
                 max-width: 50%;
             }
 
-            .top-bar-left {
-                .logo {
-                    span {
-                        display: none;
-                    }
-                }
-            }
+            // .top-bar-left {
+            //     .logo {
+            //         span {
+            //             display: none;
+            //         }
+            //     }
+            // }
 
             .top-bar-right {
                 text-align: right;

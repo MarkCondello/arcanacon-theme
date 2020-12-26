@@ -20936,15 +20936,12 @@ header.header .top-bar .top-bar-right .menu a {
   font-size: 1.5rem;
 }
 
-@media screen and (max-width: 63.99875em) {
+@media screen and (max-width: 39.99875em) {
   header.header .top-bar .top-bar-left,
   header.header .top-bar .top-bar-right {
     flex: 0 0 100%;
     /* flex: 1; */
     max-width: 50%;
-  }
-  header.header .top-bar .top-bar-left .logo span {
-    display: none;
   }
   header.header .top-bar .top-bar-right {
     text-align: right;
