@@ -11,3 +11,4 @@
 
  import './cta/index';
  import './affiliates/index';
+ import './full_width_block/index';

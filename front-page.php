@@ -50,20 +50,16 @@ include get_theme_file_path('/parts/get-future-events.php');
 			</div>
 		</div>
 	</div>
-		<div class="grid-container">
-			<div class="grid-x">
-				<div class="small-12">
-				<?php 
-				if (have_posts()) : 
-					while (have_posts()) : 
-						the_post(); 
-						the_content();
-					endwhile;
-				endif;
-				?>
-				</div>
-			</div>
-		</div>
+
+	<?php 
+	if (have_posts()) : 
+		while (have_posts()) : 
+			the_post(); 
+			the_content();
+		endwhile;
+	endif;
+	?>
+	 
 <?php if(count($futureEvents) > 1): ?>
 		<div class="bg-colour-beige future-events">
 			<div class="grid-container">	
@@ -71,9 +67,9 @@ include get_theme_file_path('/parts/get-future-events.php');
 	foreach($futureEvents as $key=>$event):
 		if($key > 0 ):
 			if($key % 2 === 1): ?>
-				<div class="grid-x grid-padding-x align-middle">
+				<div class="grid-x grid-padding-x align-middle p-b-4">
 					<div class="small-12 medium-4 cell">
-						<img class="event-thumb p-2" src="<?= $event['event_thumbnail'] ?>" alt="<?= $event['post_title']; ?>'s thumbnail" />
+						<img class="event-thumb p-2 w-100" src="<?= $event['event_thumbnail'] ?>" alt="<?= $event['post_title']; ?>'s thumbnail" />
 					</div>
 					<div class="small-12 medium-8 cell">
 						<h3><?= $event['post_title']; ?></h3>
@@ -89,7 +85,7 @@ include get_theme_file_path('/parts/get-future-events.php');
 					</div>
 				</div>
 			<?php else: ?>
-				<div class="grid-x grid-padding-x align-middle">
+				<div class="grid-x grid-padding-x align-middle p-b-4">
 					<div class="small-12 medium-8 cell">
 						<h3><?= $event['post_title']; ?></h3>
 						<p class="ff-super-reg">
@@ -103,7 +99,7 @@ include get_theme_file_path('/parts/get-future-events.php');
 						</p>
 					</div>
 					<div class="small-12 medium-4 cell">
-						<img class="event-thumb p-2" src="<?= $event['event_thumbnail'] ?>" alt="<?= $event['post_title']; ?>'s thumbnail" />
+						<img class="event-thumb p-2 w-100" src="<?= $event['event_thumbnail'] ?>" alt="<?= $event['post_title']; ?>'s thumbnail" />
 					</div>
 				</div>
 			<?php endif;

@@ -136,7 +136,7 @@ function arcanacon_blocks()
 	wp_register_script(
 		'arcanacon-blocks-script', 
 		get_template_directory_uri() . '/build/index.js', 
-		array('wp-blocks', 'wp-editor', 'wp-components', 'wp-i18n', 'wp-data')
+		array('wp-blocks', 'wp-components', 'wp-i18n', 'wp-data', 'wp-editor')
 	);
 
 	wp_enqueue_style( 'arcanacon-blocks-styles-editor', get_template_directory_uri() . '/public/css/blocks/editor.css', array(), filemtime(get_template_directory() . '/src/scss'), 'all' );
@@ -157,6 +157,16 @@ function arcanacon_blocks()
 			'editor_style'  => 'arcanacon-blocks-styles-editor',
 		)
 	);
+
+	register_block_type(
+		'arcanacon/full-width-block',
+		array(
+			'editor_script' => 'arcanacon-blocks-script',
+			'editor_style'  => 'arcanacon-blocks-styles-editor',
+		)
+	);
+
+	
 }
 add_action('init', 'arcanacon_blocks'); 
 
@@ -180,3 +190,6 @@ function arcanacon_get_featured_image ($object, $field_name, $request){
 		return $img[0];
 	}
 }
+
+/* Adds full width block support */
+add_theme_support('align-wide');

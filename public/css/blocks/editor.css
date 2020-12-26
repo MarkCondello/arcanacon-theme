@@ -1,3 +1,12 @@
 .affiliate {
   border: 1px solid red;
 }
+
+.arcanacon-full-width-block {
+  border: 1px dashed grey;
+  padding: 6rem 0px;
+}
+
+.arcanacon-full-width-block .wp-block-column {
+  margin: 0;
+}

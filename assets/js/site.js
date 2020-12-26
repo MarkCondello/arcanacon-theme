@@ -10,15 +10,15 @@ $(() => {
 
     $(window).scroll(function(){
         let scrollTop = $(window).scrollTop();
-       
-        if(scrollTop > (siteHeaderHeight / 2)){
+       //console.log(scrollTop, siteHeaderHeight)
+        if(scrollTop > (siteHeaderHeight /2)){
             $siteHeader.addClass('shrink');
-            $siteBody.addClass('header-fixed')
-           // $siteBody.css('paddingTop', siteHeaderHeight);
+            $siteBody.addClass('sticky-nav');
 
         } else {
             $siteHeader.removeClass('shrink');
-            $siteBody.removeClass('header-fixed')
+            $siteBody.removeClass('sticky-nav');
+
 
         }
     });

@@ -1,17 +1,17 @@
 header.header {
     position: relative;
+    max-height: 150px;
 
     &.shrink {
-        position: fixed;
-        top:0;
-        left: 0;
-        width: 100%;
-        z-index: 11;
 
-        .top-bar{ 
+        .top-bar {
             transition: all .5s;
             padding: .5rem;
-            max-height: 150px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 11;
 
             .logo {
                 img {
@@ -19,6 +19,7 @@ header.header {
                     transition: all .5s;
 
                 }
+
                 span {
                     font-size: 30px;
                     transition: all .5s;
@@ -27,39 +28,40 @@ header.header {
             }
         }
     }
-}
-.top-bar {
-    transition: all .5s;
-    max-height: 150px;
 
-    .logo {
-        img {
-            width: 100px;
-            margin-top: -15px;
-            transition: all .5s;
+    .top-bar {
+        transition: all .5s;
+        position: relative;
 
-        }
-        span {
-            font-family: 'SuperclarendonRegularBold'; 
-            font-size: 40px;
-            text-shadow: -2px 2px $white;
-            margin-left: -20px;
-            /* padding-top: 25px; */
-            z-index: 11;
-            letter-spacing: .05px;
-            display: inline-block;
-            color: $primary-color;
-            transition: all .5s;
+        .logo {
+            img {
+                width: 100px;
+                margin-top: -15px;
+                transition: all .5s;
 
-        }
-    }
+            }
 
-    .top-bar-right {
-        .menu {
-            a {
+            span {
+                font-family: 'SuperclarendonRegularBold';
+                font-size: 40px;
+                text-shadow: -2px 2px $white;
+                margin-left: -20px;
+                z-index: 11;
+                letter-spacing: .05px;
+                display: inline-block;
                 color: $primary-color;
-                font-weight: 700;
-                font-size: 1.5rem;
+                transition: all .5s;
+
+            }
+        }
+
+        .top-bar-right {
+            .menu {
+                a {
+                    color: $primary-color;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                }
             }
         }
     }

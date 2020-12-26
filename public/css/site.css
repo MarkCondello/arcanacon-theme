@@ -20677,6 +20677,10 @@ usage:
   height: 100%;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .image-cover {
   background-size: cover;
   background-repeat: no-repeat;
@@ -20812,6 +20816,10 @@ usage:
   color: #f552a6;
 }
 
+h1, .h1 {
+  color: #5e2696;
+}
+
 .home .banner-container {
   height: calc(100vh - 150px);
 }
@@ -20871,20 +20879,17 @@ usage:
 
 header.header {
   position: relative;
-}
-
-header.header.shrink {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 11;
+  max-height: 150px;
 }
 
 header.header.shrink .top-bar {
   transition: all .5s;
   padding: .5rem;
-  max-height: 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 11;
 }
 
 header.header.shrink .top-bar .logo img {
@@ -20897,23 +20902,22 @@ header.header.shrink .top-bar .logo span {
   transition: all .5s;
 }
 
-.top-bar {
+header.header .top-bar {
   transition: all .5s;
-  max-height: 150px;
+  position: relative;
 }
 
-.top-bar .logo img {
+header.header .top-bar .logo img {
   width: 100px;
   margin-top: -15px;
   transition: all .5s;
 }
 
-.top-bar .logo span {
+header.header .top-bar .logo span {
   font-family: 'SuperclarendonRegularBold';
   font-size: 40px;
   text-shadow: -2px 2px #ffffff;
   margin-left: -20px;
-  /* padding-top: 25px; */
   z-index: 11;
   letter-spacing: .05px;
   display: inline-block;
@@ -20921,7 +20925,7 @@ header.header.shrink .top-bar .logo span {
   transition: all .5s;
 }
 
-.top-bar .top-bar-right .menu a {
+header.header .top-bar .top-bar-right .menu a {
   color: #5e2696;
   font-weight: 700;
   font-size: 1.5rem;
@@ -21014,8 +21018,4 @@ header.header.shrink .top-bar .logo span {
 body {
   padding-top: 0px;
   transition: padding-top .5s;
-}
-
-body.header-fixed {
-  padding-top: 100px;
 }

@@ -9,7 +9,7 @@
 @import './globals/helpers';
 
 @import './globals/ctas';
-// @import './globals/typography';
+@import './globals/typography';
 
 
 @import "pages/home";
@@ -18,16 +18,14 @@
 @import "sections/site-header",
 "sections/footer.scss";
 
-// @import "sections/off-canvas";
-
-// @import "components/panel";
-// @import "components/hamburger";
-
 body {
     padding-top: 0px;
     transition: padding-top .5s;
     
-    &.header-fixed {
-        padding-top: 100px;
-    }
+ 
 }
+
+// @import "sections/off-canvas";
+
+// @import "components/panel";
+// @import "components/hamburger";
