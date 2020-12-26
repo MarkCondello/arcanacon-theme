@@ -7,7 +7,7 @@
 ?>
  
 <div class="top-bar" id="top-bar-menu">
-	<div class="top-bar-left float-left">
+	<div class="top-bar-left">
 		<ul class="menu">
 			<li>
 				<a class="logo" href="<?php echo home_url(); ?>">
@@ -20,7 +20,9 @@
 	<div class="top-bar-right show-for-medium">
 		<?php joints_top_nav(); ?>	
 	</div>
-	<div class="top-bar-right float-right show-for-small-only">
-		<button class="menu-icon" type="button" data-toggle="off-canvas"></button>
+	<div class="top-bar-right show-for-small-only">
+		<button type="button" data-toggle="off-canvas">
+			<i class="fal fa-bars fa-2x"></i>
+		</button>
 	</div>
 </div>

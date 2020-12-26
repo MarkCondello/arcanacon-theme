@@ -1,6 +1,6 @@
 header.header {
     position: relative;
-    max-height: 150px;
+    height: 150px;
 
     &.shrink {
 
@@ -32,6 +32,7 @@ header.header {
     .top-bar {
         transition: all .5s;
         position: relative;
+        flex-wrap: nowrap;
 
         .logo {
             img {
@@ -51,7 +52,6 @@ header.header {
                 display: inline-block;
                 color: $primary-color;
                 transition: all .5s;
-
             }
         }
 
@@ -61,6 +61,33 @@ header.header {
                     color: $primary-color;
                     font-weight: 700;
                     font-size: 1.5rem;
+                }
+            }
+    
+        }
+
+        @include breakpoint(medium down){
+            .top-bar-left, 
+            .top-bar-right {
+                flex: 0 0 100%;
+                /* flex: 1; */
+                max-width: 50%;
+            }
+
+            .top-bar-left {
+                .logo {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
+            .top-bar-right {
+                text-align: right;
+                padding: 1rem 2rem;
+
+                button {
+                    color: $arc-purple;
                 }
             }
         }
