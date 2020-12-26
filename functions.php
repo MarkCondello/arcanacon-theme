@@ -52,4 +52,28 @@ require_once(get_template_directory().'/functions/custom-post-type.php');
 // require_once(get_template_directory().'/functions/admin.php'); 
 
 
+/**
+ * Custom Queries
+ */
+// function event_main_query($query){
+//     if(!is_admin() && is_post_type_archive('event') && $query->is_main_query()):
+//         $today = date('Ymd');
+//         $query->set('meta_key', 'event_date');
+//         $query->set('order_by', 'meta_value_num');
+//         $query->set('order', 'DEC');
+//         $query->set('meta_query', [
+//             'key' => 'event_date',
+//             'compare' => '>=',
+//             'value' => $today,
+//            // 'type' => 'numeric',
+//         ]);
+
  
+
+//     endif;
+// }
+
+// add_filter('pre_get_posts', 'event_main_query');
+
+
+

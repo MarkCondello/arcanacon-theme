@@ -11,7 +11,7 @@ get_header(); ?>
 	
 		<div class="inner-content grid-x grid-margin-x grid-padding-x">
 		
-		    <main class="main small-12   cell" role="main">
+		    <main class="main small-12 cell" role="main">
 			    
 		    	<header>
 		    		<h1 class="page-title"><?php the_archive_title();?></h1>
