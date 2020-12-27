@@ -20943,6 +20943,23 @@ header.header .top-bar .top-bar-right .menu a {
   color: #5e2696;
   font-weight: 700;
   font-size: 1.5rem;
+  border: 1px solid #ffffff;
+  transition: all .5s;
+  background-color: transparent;
+  padding-top: .85rem;
+}
+
+header.header .top-bar .top-bar-right .menu a:hover {
+  color: #f552a6;
+}
+
+header.header .top-bar .top-bar-right .menu li.active a {
+  border: 1px solid #f552a6;
+  color: #f552a6;
+}
+
+header.header .top-bar .top-bar-right .menu li.active a:hover {
+  background-color: rgba(255, 236, 167, 0.25);
 }
 
 @media screen and (max-width: 39.99875em) {

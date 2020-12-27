@@ -44,7 +44,9 @@ function set_custom_posts() {
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
 			'show_in_rest' => true,
-			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'sticky')
+			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'sticky'),
+ 
+			
 	 	) /* end of options */
 	); /* end of register post type */
 

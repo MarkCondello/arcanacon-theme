@@ -29,27 +29,14 @@ class Topbar_Menu_Walker extends Walker_Nav_Menu {
 		$output .= "\n$indent<ul class=\"menu\">\n";
 	}
 }
+ 
 
-// The Off Canvas Menu
-// function joints_off_canvas_nav() {
-// 	wp_nav_menu(array(
-// 		'container'			=> false,							// Remove nav container
-// 		'menu_id'			=> 'offcanvas-nav',					// Adding custom nav id
-// 		'menu_class'		=> 'vertical menu accordion-menu',	// Adding custom nav class
-// 		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
-// 		'theme_location'	=> 'offcanvas-nav',					// Where it's located in the theme
-// 		'depth'				=> 5,								// Limit the depth of the nav
-// 		'fallback_cb'		=> false,							// Fallback function (see below)
-// 		'walker'			=> new Off_Canvas_Menu_Walker()
-// 	));
-// }
-
-// class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
-// 	function start_lvl(&$output, $depth = 0, $args = Array() ) {
-// 		$indent = str_repeat("\t", $depth);
-// 		$output .= "\n$indent<ul class=\"vertical menu\">\n";
-// 	}
-// }
+function custom_active_item_classes($classes = array(), $menu_item = false){            
+	global $post;
+	$classes[] = ($menu_item->url == get_post_type_archive_link($post->post_type)) ? 'current-menu-item active' : '';
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'custom_active_item_classes', 10, 2 );
 
 // The Footer Menu
 // function joints_footer_links() {

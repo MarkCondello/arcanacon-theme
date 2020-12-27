@@ -17,13 +17,11 @@ header.header {
                 img {
                     width: 75px;
                     transition: all .5s;
-
                 }
 
                 span {
                     font-size: 30px;
                     transition: all .5s;
-
                 }
             }
         }
@@ -39,7 +37,6 @@ header.header {
                 width: 100px;
                 margin-top: -15px;
                 transition: all .5s;
-
             }
 
             span {
@@ -61,6 +58,24 @@ header.header {
                     color: $primary-color;
                     font-weight: 700;
                     font-size: 1.5rem;
+                    border: 1px solid $arc-white;
+                    transition: all .5s;
+                    background-color: transparent;
+                    padding-top: .85rem;
+                    
+                    &:hover {
+                        color: $arc-pink;
+                    }
+                }
+
+                li.active {
+                    a {
+                        border: 1px solid $arc-pink;
+                        color: $arc-pink;
+                        &:hover {
+                            background-color: rgba($arc-beige, .25);
+                        }
+                    }
                 }
             }
     
