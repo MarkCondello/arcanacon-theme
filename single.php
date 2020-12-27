@@ -15,11 +15,8 @@ $ctaLink = get_field('cta_link', get_the_ID());
 ?>
 			
 <div class="content">
-
 	<div class="inner-content grid-x">
-
 		<main class="main small-12" role="main">
-		
 		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
  		    	<!-- <?php //get_template_part( 'parts/loop', 'single' ); ?> -->
 				 <?php downPageBanner($title, $bgImage, $eventDate, $ctaText, $ctaLink); ?>  
