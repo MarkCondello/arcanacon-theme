@@ -8,16 +8,19 @@
 get_header(); 
 
 $title = post_type_archive_title('', false);
-$archive_page_ID = get_archive_page_id('events');	
+$archive_page_ID = get_archive_page_id('events');
+$eventPage = get_post($archive_page_ID);	
 $bgImage = (has_post_thumbnail($archive_page_ID) ? wp_get_attachment_image_src( get_post_thumbnail_id($archive_page_ID), 'large' ) : '' );	
-?>
-			
+
+// echo "<pre>";
+// print_r($eventPage);
+?>	
 	<div class="content">
-	<?php downPageBanner($title, $bgImage[0], date("jS F, Y"),  "Do this now!", '#'); ?>
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
+	<?php downPageBanner($title, $bgImage[0]); ?>
+	<?= $eventPage->post_content; ?>
+ 	<div class="inner-content grid-x grid-margin-x grid-padding-x">
 		    <main class="main small-12 cell bg-colour-beige p-t-3" role="main"> 
 				<?php if (have_posts()) : 
-
 					$allEvents = [];
 					$today = date('Ymd');
 
@@ -26,7 +29,6 @@ $bgImage = (has_post_thumbnail($archive_page_ID) ? wp_get_attachment_image_src( 
 
 					$eventDate = get_field('event_date', get_the_ID());
 					$event = [];
-
 					$event['post_title'] = get_the_title();
 					$event['post_excerpt'] = get_the_excerpt();
 					$event['guid'] = get_the_permalink();

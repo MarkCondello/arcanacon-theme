@@ -20848,6 +20848,7 @@ h1, .h1 {
   color: #ffffff;
   background-color: #5e2696;
   position: relative;
+  background-position: center;
 }
 
 .banner:before {

@@ -77,7 +77,6 @@ function downPageBanner($title = '', $bgImage = '', $date = null, $ctaText = nul
                             <h2>Don't miss a turn!</h2> 
                          </div>
                         <?php endif; ?>
-
 					</div>
 				</div>
 			</div>	

@@ -59,7 +59,6 @@ include get_theme_file_path('/parts/get-future-events.php');
 		endwhile;
 	endif;
 	?>
-	 
 <?php if(count($futureEvents) > 1): ?>
 		<div class="bg-colour-beige future-events">
 			<div class="grid-container">	

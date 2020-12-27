@@ -8,6 +8,7 @@
     color: $arc-white;
     background-color: $arc-purple;
     position: relative;
+    background-position: center;
 
     &:before {
         content: '';
