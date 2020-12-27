@@ -1,19 +1,23 @@
 <?php
 /**
- * Displays archive pages if a speicifc template is not set. 
+ * Displays event archive posts. 
  *
  * For more info: https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
-get_header(); ?>
+get_header(); 
+
+$title = post_type_archive_title('', false);
+$archive_page_ID = get_archive_page_id('events');	
+$bgImage = (has_post_thumbnail($archive_page_ID) ? wp_get_attachment_image_src( get_post_thumbnail_id($archive_page_ID), 'large' ) : '' );	
+?>
 			
 	<div class="content">
-	
+	<?php downPageBanner($title, $bgImage[0], date("jS F, Y"),  "Do this now!", '#'); ?>
 		<div class="inner-content grid-x grid-margin-x grid-padding-x">
-		
 		    <main class="main small-12 cell bg-colour-beige p-t-3" role="main"> 
-		
 				<?php if (have_posts()) : 
+
 					$allEvents = [];
 					$today = date('Ymd');
 
@@ -41,35 +45,24 @@ get_header(); ?>
 						$date = new DateTime();
 						$date->modify("+1 year");
 						$event['event_date_strtime'] = strtotime($date->format('Ymd'));
-						$event['event_date'] = 'No event date is set.';
+						$event['event_date'] = 'No date is scheduled for this event yet.';
 					endif;
 					array_push($allEvents, $event); 
- 				 endwhile; 
+ 				endwhile; 
 				 
-				 function order_by_asc($event1, $event2){
+				function order_by_asc($event1, $event2){
 					return $event1['event_date_strtime'] - $event2['event_date_strtime'];
 				}
 				usort($allEvents, 'order_by_asc');
-				// echo "<pre>";
-				// print_r($allEvents);
 				 
-					foreach($allEvents as $key=>$event): ?>
-
+				foreach($allEvents as $key=>$event): ?>
 	<?php 		include(locate_template('./parts/event-row.php', false, false) ); ?>
 
-				<?php endforeach; ?>
- 					
-				<?php else : ?>
-											
+				<?php endforeach; ?>	
+				<?php else : ?>		
 					<?php get_template_part( 'parts/content', 'missing' ); ?>
-						
 				<?php endif; ?>
-		
 			</main> <!-- end #main -->
-	
- 	    
 	    </div> <!-- end #inner-content -->
-	    
 	</div> <!-- end #content -->
-
 <?php get_footer(); ?>
