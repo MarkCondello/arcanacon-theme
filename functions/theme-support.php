@@ -139,7 +139,7 @@ function arcanacon_blocks()
 		array('wp-blocks', 'wp-components', 'wp-i18n', 'wp-data', 'wp-editor')
 	);
 
-	wp_enqueue_style( 'arcanacon-blocks-styles-editor', get_template_directory_uri() . '/public/css/blocks/editor.css', array(), filemtime(get_template_directory() . '/src/scss'), 'all' );
+	wp_enqueue_style( 'arcanacon-blocks-styles-editor', get_template_directory_uri() . '/public/css/editor.css', array(), filemtime(get_template_directory() . '/src/scss'), 'all' );
 
 
 	//ToDo: This below should be a loop from an array of blockNames
@@ -193,3 +193,8 @@ function arcanacon_get_featured_image ($object, $field_name, $request){
 
 /* Adds full width block support */
 add_theme_support('align-wide');
+
+function remove_comments($wp_admin_bar){
+	$wp_admin_bar->remove_node('comments');
+}
+add_action('admin_bar_menu', 'remove_comments', 999 );

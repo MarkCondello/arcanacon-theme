@@ -18,7 +18,7 @@ webpack = require('webpack');
 mix
     .js('assets/js/site.js', 'public/js')
     .sass('assets/scss/site.scss', 'public/css')
-    .sass('src/scss/editor.scss', 'public/css/blocks')
+    .sass('src/scss/editor.scss', 'public/css')
     .copy('assets/fonts/', 'public/fonts/')
     .copy('assets/scss/images/', 'public/images/')
 

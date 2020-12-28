@@ -1,4 +1,5 @@
 @import './fonts.scss';
+@import "./fa-fonts.css";
 @import './globals/palette';
 
 @import 'foundation';
@@ -8,9 +9,7 @@
 
 @import './globals/helpers';
 
-@import './globals/ctas';
 @import './globals/typography';
-
 
 @import "pages/home";
 //  @import "pages/single";
