@@ -26,6 +26,6 @@ Uses the Wordpress compiler to convert React code to ES5 compatable scripts to r
 ## Modifying custom fields
 ACF settings can be modified in the admin. All changes there must be commited to this repo. 
 
-##Export the PHP and the JSON.
+## Export the PHP and the JSON.
 The PHP code which generates the fields is in functions/custom-fields.php
 To modify the fields, we need the JSON fields settings found in includes/acf-export...json This file can be imported to make changes to the fields.
