@@ -16,20 +16,20 @@ include get_theme_file_path('/parts/get-future-events.php');
 			<div class="banner-content">
 				<div class="grid-container h-100">
 					<div class="grid-y grid-padding-y align-justify h-100">
-						<div class="small-9 cell"> 
+						<div class="small-6 medium-9 cell"> 
 							<h1 class="l-height-1"><?= $futureEvents[0]['post_title'] ?></h1>
 							<p class="ff-super-reg">
 								<i class="fal fa-calendar-alt"></i>
 								<?= $futureEvents[0]['event_date'] ?>
 							</p>
 						</div>
-						<div class="small-3 cell"> 
+						<div class="small-6 medium-3 cell"> 
 							<?php if(!empty($futureEvents[0]['cta_text']) &&  !empty($futureEvents[0]['cta_link'])): ?>
 								<a href="<?= $futureEvents[0]['cta_link'] ?>" target="_blank" class="cta">
 									<?= $futureEvents[0]['cta_text'] ?>
 								</a>
 							<?php endif; ?>
-							<h2>Don't miss a turn!</h2>
+							<h2 class="h3">Don't miss a turn!</h2>
 						</div>
 					</div>
 				</div>

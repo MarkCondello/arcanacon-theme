@@ -20798,24 +20798,6 @@ usage:
   border-color: #ffeca7;
 }
 
-.cta {
-  min-width: 300px;
-  background-color: #f552a6;
-  padding: 1rem;
-  text-align: center;
-  font-family: 'SuperclarendonRegular';
-  color: #ffffff;
-  font-size: 1.65rem;
-  border: 2px solid #f552a6;
-  transition: all .5s;
-  display: inline-block;
-}
-
-.cta:hover {
-  background-color: transparent;
-  color: #f552a6;
-}
-
 h1, .h1 {
   color: #5e2696;
 }
@@ -20839,6 +20821,18 @@ h1, .h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@media screen and (max-width: 63.99875em) {
+  .home .banner-container {
+    height: calc(100vh - 100px);
+  }
+  .home .banner-container .banner {
+    height: 75%;
+  }
+  .home .banner-container .banner-abstract {
+    height: 25%;
+  }
 }
 
 .banner {
@@ -20963,6 +20957,16 @@ header.header .top-bar .top-bar-right .menu li.active a:hover {
 }
 
 @media screen and (max-width: 39.99875em) {
+  header.header {
+    height: 100px;
+  }
+  header.header .top-bar {
+    padding: 1rem 0.5rem;
+  }
+  header.header .top-bar .logo img {
+    margin-top: -10px;
+    width: 60px;
+  }
   header.header .top-bar .top-bar-left,
   header.header .top-bar .top-bar-right {
     flex: 0 0 100%;
@@ -20975,6 +20979,9 @@ header.header .top-bar .top-bar-right .menu li.active a:hover {
   }
   header.header .top-bar .top-bar-right button {
     color: #5e2696;
+  }
+  header.header.shrink .top-bar .logo img {
+    width: 50px;
   }
 }
 
@@ -21094,6 +21101,7 @@ body {
   transition: padding-top .5s;
 }
 
+.affiliate,
 .arcanacon-full-width-block {
   border: none;
 }

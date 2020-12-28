@@ -3,7 +3,6 @@ header.header {
     height: 150px;
 
     &.shrink {
-
         .top-bar {
             transition: all .5s;
             padding: .5rem;
@@ -62,7 +61,7 @@ header.header {
                     transition: all .5s;
                     background-color: transparent;
                     padding-top: .85rem;
-                    
+
                     &:hover {
                         color: $arc-pink;
                     }
@@ -72,17 +71,29 @@ header.header {
                     a {
                         border: 1px solid $arc-pink;
                         color: $arc-pink;
+
                         &:hover {
                             background-color: rgba($arc-beige, .25);
                         }
                     }
                 }
             }
-    
         }
+    }
 
-        @include breakpoint(small down){
-            .top-bar-left, 
+    @include breakpoint(small down) {
+        height: 100px;
+
+        .top-bar {
+            padding: 1rem 0.5rem;
+            .logo {
+                img {
+                    margin-top: -10px;
+                    width: 60px
+                }
+            }
+
+            .top-bar-left,
             .top-bar-right {
                 flex: 0 0 100%;
                 /* flex: 1; */
@@ -95,6 +106,16 @@ header.header {
 
                 button {
                     color: $arc-purple;
+                }
+            }
+        }
+
+        &.shrink {
+            .top-bar {
+                .logo {
+                    img {
+                        width: 50px
+                    }
                 }
             }
         }

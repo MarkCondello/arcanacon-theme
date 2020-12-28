@@ -1,5 +1,23 @@
+@import "../../assets/scss/globals/palette.scss";
+
 .affiliate{
-    border: 1px solid red;
+    border: 1px dashed grey;
+    object-fit: cover;
+    margin-bottom: 3rem;
+
+    h4 {
+        margin:0;
+        color: $arc-purple;
+        line-height: 1;
+    }
+
+    img {
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+        margin: 1.5rem auto;
+        display: block;
+    }
 }
 
 .arcanacon-full-width-block {
@@ -8,5 +26,62 @@
 
     .wp-block-column {
         margin: 0;
+    }
+}
+
+.cta-block {
+
+    &.left-align {
+        text-align: left;
+    }
+
+    &.center-align {
+        text-align: center;
+    }
+
+    &.right-align {
+        text-align: right;
+    }
+} 
+
+.cta {
+    min-width: 300px;
+    background-color: $arc-pink;
+    padding: 1rem;
+    text-align: center;
+    font-family: 'SuperclarendonRegular';
+    color: $arc-white;
+    font-size: 1.65rem;
+    border: 2px solid $arc-pink;
+    transition: all .5s;
+    display: inline-block;
+    text-decoration: none;
+
+    &:hover {
+        background-color: transparent;
+        color: $arc-pink;
+    }
+}
+
+
+
+/*
+WP block overrides
+*/
+body {
+    @media (max-width: 782px){
+        .wp-block-column {
+            flex-basis: 100%;
+
+            &:nth-child(odd),
+            &:not(:last-child){
+                margin-right: 0;
+            }
+
+            &:not(:first-child), 
+            &:nth-child(2n){
+                margin-left:0;
+            }
+        }
     }
 }

@@ -38,10 +38,10 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 // Related post function - no need to rely on plugins
 // require_once(get_template_directory().'/functions/related-posts.php'); 
 
-
-
 // Use this as a template for custom post types
 require_once(get_template_directory().'/functions/custom-post-type.php');
+
+require_once(get_template_directory().'/functions/custom-fields.php');
 
 
 //Get post archive page id
@@ -59,7 +59,7 @@ function downPageBanner($title = '', $bgImage = '', $date = null, $ctaText = nul
 			<div class="banner-content">
 				<div class="grid-container h-100">
 					<div class="grid-x grid-padding-x h-100">
-						<div class="small-9 cell"> 
+						<div class="small-12 medium-9 cell"> 
                             <h1 class="l-height-1"><?= $title ?></h1>
                             <?php if(isset($date)): ?>
 							<p class="ff-super-reg">
@@ -69,12 +69,11 @@ function downPageBanner($title = '', $bgImage = '', $date = null, $ctaText = nul
                             <?php endif; ?>
                         </div>
                         <?php if(!empty($ctaText) && !empty($ctaLink)): ?>
-
 						<div class="small-12 cell align-self-bottom"> 
                             <a href="<?= $ctaLink ?>" target="_blank" class="cta">
                                 <?= $ctaText ?>
                             </a>     
-                            <h2>Don't miss a turn!</h2> 
+                            <!-- <h2 class="h3">Don't miss a turn!</h2>  -->
                          </div>
                         <?php endif; ?>
 					</div>
@@ -84,37 +83,9 @@ function downPageBanner($title = '', $bgImage = '', $date = null, $ctaText = nul
     <?php
 }
 
- 
-
 // Customize the WordPress login menu
 // require_once(get_template_directory().'/functions/login.php'); 
 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
-
-
-/**
- * Custom Queries
- */
-// function event_main_query($query){
-//     if(!is_admin() && is_post_type_archive('event') && $query->is_main_query()):
-//         $today = date('Ymd');
-//         $query->set('meta_key', 'event_date');
-//         $query->set('order_by', 'meta_value_num');
-//         $query->set('order', 'DEC');
-//         $query->set('meta_query', [
-//             'key' => 'event_date',
-//             'compare' => '>=',
-//             'value' => $today,
-//            // 'type' => 'numeric',
-//         ]);
-
- 
-
-//     endif;
-// }
-
-// add_filter('pre_get_posts', 'event_main_query');
-
-
 

@@ -2,44 +2,49 @@ const { registerBlockType } = wp.blocks;
 const { 
     RichText,  
     InspectorControls,
-    ColorPalette,
+    URLInputButton,
 } = wp.editor;
 
-const { PanelBody} = wp.components;
+const { 
+    PanelBody,
+    SelectControl
+} = wp.components;
 
 registerBlockType('arcanacon/custom-cta', {
     //built-in attrs
     title: 'CTA',
-    description: 'Block for CTA',
-    icon: 'format-image',
-    category: 'layout',
+    description: 'Call to action button feature.',
+    icon: 'megaphone',
+    category: 'formatting',
     //custom attrs
     attributes: {
         title: {
             type: 'string',
             source: 'html',
-            selector: 'h2',
+            default: 'CTA title',
+            selector: '.cta-block a',
         },
-        titleColour: {
+        link: {
             type: 'string',
-            default: 'black',
+            source: 'attribute',
+            attribute: 'href',
+            default: '#',
+            selector: '.cta-block a',
         },
-        body: {
+        alignment: {
             type: 'string',
-            source: 'html',
-            selector: 'p'
-        }
+            default: 'left-align'
+        },
     },
-    //custom funcs
+ 
 
-    //built in funcs
     edit:( props => {
         const {
             attributes: {
                 title,
-                titleColour, 
-                body
-            },
+                link,
+                alignment,
+             },
             setAttributes
         } = props;
 
@@ -47,36 +52,48 @@ registerBlockType('arcanacon/custom-cta', {
             setAttributes({ title : value });
         }
 
-        let onChangeBody = (value) => {
-            setAttributes({ body: value });
+        let onChangeUrl = (value) => {
+            setAttributes({ link: value})
         }
 
-        let onColourChange = (value) => {
-            setAttributes({titleColour: value});
+        let onChangeAlignment = (value) => {
+
+            console.log({value})
+            setAttributes({alignment: value})
         }
+
+        let alignmentOptions = [
+            {label: "Left", value: "left-align"},
+            {label: "Center", value: "center-align"},
+            {label: "Right", value: "right-align"},
+        ]
 
         return ([
-            <InspectorControls style={{ marginBottom: '40px'}}>
-                <PanelBody title={ 'Font colour' }>
-                    <p><strong>Select a Title Colour</strong></p>
-                    <ColorPalette value={titleColour} onChange={onColourChange}/>
+            <div class={`cta-block ${alignment}`}>
+                <a href={link} class="cta">{title}</a>
+            </div>,
+            <InspectorControls>
+                <PanelBody title={'CTA link'}>
+                    <URLInputButton 
+                        onChange={onChangeUrl}
+                        url={link}
+                        />
                 </PanelBody>
-            </InspectorControls>,
-            <div class="cta-container">
-                <RichText   key="editable"
-                            tagName="h2"  
-                            placeholder="Your CTA title"
+                <PanelBody title={'CTA title'}> 
+                    <RichText key="editable"
+                            placeholder="CTA title"
                             value={title}
                             onChange={onChangeTitle}
-                            style={{ color: titleColour }}
-                />
-                <RichText   key="editable"
-                            tagName="p"  
-                            placeholder="Your CTA body content"
-                            value={body}
-                            onChange={onChangeBody}
-                />
-            </div>
+                    />
+                </PanelBody>
+                <PanelBody title={'CTA alignment'}>
+                    <SelectControl
+                        options={alignmentOptions}
+                        onChange={onChangeAlignment}
+                        value={alignment}
+                    ></SelectControl>
+                </PanelBody>
+            </InspectorControls>
          ])
         
     }),
@@ -84,19 +101,17 @@ registerBlockType('arcanacon/custom-cta', {
         const {
             attributes: {
                 title,
-                body,
-                titleColour
+                link,
+                alignment,
             },
         } = props;
 
         return (
-            <div class="cta-container">
-                <h2 style={{ color: titleColour }}>{title}</h2>
-                 <RichText.Content tagName="p" value={body} />
+            <div class={`cta-block ${alignment}`}>
+                <a href={link} class="cta">{title}</a>
             </div>
         )
-        
     }),
 });
 
-//this block is registered through theme-suppoer.php
+//this block is registered through theme-support.php

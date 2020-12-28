@@ -1,5 +1,24 @@
 .affiliate {
-  border: 1px solid red;
+  border: 1px dashed grey;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 3rem;
+}
+
+.affiliate h4 {
+  margin: 0;
+  color: #5e2696;
+  line-height: 1;
+}
+
+.affiliate img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin: 1.5rem auto;
+  display: block;
 }
 
 .arcanacon-full-width-block {
@@ -9,4 +28,50 @@
 
 .arcanacon-full-width-block .wp-block-column {
   margin: 0;
+}
+
+.cta-block.left-align {
+  text-align: left;
+}
+
+.cta-block.center-align {
+  text-align: center;
+}
+
+.cta-block.right-align {
+  text-align: right;
+}
+
+.cta {
+  min-width: 300px;
+  background-color: #f552a6;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'SuperclarendonRegular';
+  color: #ffffff;
+  font-size: 1.65rem;
+  border: 2px solid #f552a6;
+  transition: all .5s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background-color: transparent;
+  color: #f552a6;
+}
+
+/*
+WP block overrides
+*/
+@media (max-width: 782px) {
+  body .wp-block-column {
+    flex-basis: 100%;
+  }
+  body .wp-block-column:nth-child(odd), body .wp-block-column:not(:last-child) {
+    margin-right: 0;
+  }
+  body .wp-block-column:not(:first-child), body .wp-block-column:nth-child(2n) {
+    margin-left: 0;
+  }
 }

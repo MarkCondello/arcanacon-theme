@@ -62,12 +62,11 @@ registerBlockType ('arcanacon/affiliates', {
         } else {
             options.push( { value: null, label: "There are not affiliate options"});
         }
-        console.log({  affiliateExcerpt})
 
         return ([
             <InspectorControls> 
                 <SelectControl
-                    label="Select an option"
+                    label="Select an affiliate"
                     options={options}
                     onChange={onSelectChange}
                     value={affiliateTitle}
@@ -75,7 +74,7 @@ registerBlockType ('arcanacon/affiliates', {
                 </SelectControl>
             </InspectorControls>,
             <div class="affiliate">
-                <h3>{affiliateTitle}</h3>
+                <h4>{affiliateTitle}</h4>
                 <img src={affiliateImage} />  
                 <p>{affiliateExcerpt}</p>
             </div>
@@ -92,10 +91,9 @@ registerBlockType ('arcanacon/affiliates', {
  	   } = props;
 
     return (<div class="affiliate">
-                <h3>{affiliateTitle}</h3>
+                <h4>{affiliateTitle}</h4>
                 <img src={affiliateImage} />  
                 <p>{affiliateExcerpt}</p>
             </div> )
-    },
-    
+    }, 
 });
