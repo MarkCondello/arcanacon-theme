@@ -20807,6 +20807,10 @@ usage:
   height: 85%;
 }
 
+.home .banner-container .banner h1 a {
+  color: #ffffff;
+}
+
 .home .banner-container .banner-abstract {
   height: 15%;
   background-color: #5e2696;
@@ -20820,6 +20824,10 @@ usage:
   justify-content: center;
 }
 
+.home .banner-container .banner-abstract .content p {
+  line-height: 1.25;
+}
+
 @media screen and (max-width: 63.99875em) {
   .home .banner-container {
     height: calc(100vh - 100px);
@@ -20829,6 +20837,9 @@ usage:
   }
   .home .banner-container .banner-abstract {
     height: 25%;
+  }
+  .home .banner-container .banner-abstract p {
+    line-height: 1;
   }
 }
 

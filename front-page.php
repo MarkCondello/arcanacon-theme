@@ -17,7 +17,11 @@ include get_theme_file_path('/parts/get-future-events.php');
 				<div class="grid-container h-100">
 					<div class="grid-y grid-padding-y align-justify h-100">
 						<div class="small-6 medium-9 cell"> 
-							<h1 class="l-height-1"><?= $futureEvents[0]['post_title'] ?></h1>
+							<h1 class="l-height-1">
+								<a href="<?= $futureEvents[0]['guid']; ?>">	
+									<?= $futureEvents[0]['post_title'] ?>
+								</a>
+							</h1>
 							<p class="ff-super-reg">
 								<i class="fal fa-calendar-alt"></i>
 								<?= $futureEvents[0]['event_date'] ?>
@@ -29,7 +33,7 @@ include get_theme_file_path('/parts/get-future-events.php');
 									<?= $futureEvents[0]['cta_text'] ?>
 								</a>
 							<?php endif; ?>
-							<h2 class="h3">Don't miss a turn!</h2>
+							<h2 class="h3 m-t-1">Don't miss a turn!</h2>
 						</div>
 					</div>
 				</div>

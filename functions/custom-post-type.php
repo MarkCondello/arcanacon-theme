@@ -208,9 +208,3 @@ function arcanacon_event_column($column, $post_id)
 	endif;
 }
 
-add_filter('manage_edit-event_sortable_columns', 'arcanacon_event_sortable_columns');
-function arcanacon_event_sortable_columns($columns)
-{
-	$columns['scheduled_date'] = 'date_scheduled';
-	return $columns;
-}

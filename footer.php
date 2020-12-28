@@ -27,22 +27,22 @@
 								<h5>Reach out to us here:</h5>
 								<ul role="navigation" class="menu">
 									<li>
-										<a href="#">
+										<a href="#" target="_blank" rel="noopener noreferrer nofollow">
 											<i class="fa fa-discord fa-2x"></i>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="https://www.facebook.com/Arcanacon/" target="_blank" rel="noopener noreferrer nofollow">
 											<i class="fa fa-facebook-f fa-2x"></i>
 										</a>
 									</li>
 									<li>
-										<a href="#">
-											<i class="fa fa-twitter  fa-2x"></i>
+										<a href="https://twitter.com/arcanacon" target="_blank" rel="noopener noreferrer nofollow">
+											<i class="fa fa-twitter fa-2x"></i>
 										</a>
 									</li>
 									<li>
-										<a href="#">
+										<a href="mailto:arcanacon.orgs@gmail.com">
 											<i class="fas fa-envelope fa-2x"></i>
 										</a>
 									</li>
@@ -61,3 +61,4 @@
 	</body>
 	
 </html> <!-- end page -->
+

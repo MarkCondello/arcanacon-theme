@@ -4,6 +4,12 @@
 
         .banner {
             height: 85%;
+
+            h1 {
+                a {
+                    color: $arc-white;
+                }
+            }
         }
 
         .banner-abstract {
@@ -16,6 +22,10 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+
+                p{
+                    line-height: 1.25;
+                }
             }
         }
 
@@ -27,6 +37,9 @@
     
             .banner-abstract {
                 height: 25%;
+                p {
+                    line-height: 1;
+                }
             }
         }
     }

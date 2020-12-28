@@ -53,6 +53,11 @@
   display: block;
 }
 
+.affiliate p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 .arcanacon-full-width-block {
   border: 1px dashed grey;
   padding: 6rem 0px;
@@ -98,8 +103,8 @@
 /*
 WP block overrides
 */
-body h1,
-body .h1,
+body .content h1,
+body .content .h1,
 body .wp-block-heading h1 {
   color: #5e2696;
   font-family: 'SuperclarendonRegularBold';
