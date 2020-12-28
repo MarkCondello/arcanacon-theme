@@ -169,3 +169,48 @@ add_action( 'init', 'set_custom_posts');
 // //before WP queries the posts in the database
 // add_action('pre_get_posts', 'arcanacon_adjust_queries');
 
+
+ add_filter ('manage_event_posts_columns', 'arcanacon_filter_event_columns');
+function arcanacon_filter_event_columns($columns)
+{
+	// $columns['title'] = __('Title');
+	// $columns['scheduled_date'] = __('Scheduled Date');
+	$columns = array(
+		'cb' => $columns['cb'],
+		'title' => __('Title'),
+		'scheduled_date' => __('Scheduled date'),
+		'thumbnail' => __('Thumbnail'),
+		'author' => __('Author'),
+		'date' => __('Date'),
+	);
+	return $columns;
+}
+
+add_action('manage_event_posts_custom_column', 'arcanacon_event_column', 10, 2);
+function arcanacon_event_column($column, $post_id)
+{
+	if('scheduled_date' === $column):
+		$date = get_field('event_date', $post_id);
+		if(!$date):
+			//echo "Not scheduled.";
+		else:
+			echo $date;
+		endif;
+	endif;
+
+	if('thumbnail' === $column):
+		$thumbnail = get_field( 'event_thumbnail', $post_id);
+		if(!$thumbnail):
+			echo 'No thumbnail added.';
+		else:
+			echo "<img src={$thumbnail} width='80' />";
+		endif;
+	endif;
+}
+
+add_filter('manage_edit-event_sortable_columns', 'arcanacon_event_sortable_columns');
+function arcanacon_event_sortable_columns($columns)
+{
+	$columns['scheduled_date'] = 'date_scheduled';
+	return $columns;
+}
