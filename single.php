@@ -10,8 +10,6 @@ $eventDate = get_field('event_date', get_the_ID());
 $ctaText = get_field('cta_text', get_the_ID());
 $ctaLink = get_field('cta_link', get_the_ID());
 
-//   echo "<pre>";
-//   var_dump($title, $bgImage, $eventDate, $ctaText, $ctaLink);
 ?>
 			
 <div class="content">

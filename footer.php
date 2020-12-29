@@ -11,10 +11,12 @@
 				<div class="discord-cta">
 					<div class="content">
 						<div class="-inner">
-							<i class="fa fa-discord fa-4x m-b-1"></i>
+							<a  href="https://discord.com/invite/t5VxU4ZURE" target="_blank" rel="noopener noreferrer nofollow">
+								<i class="fa fa-discord fa-4x m-b-1 colour-white"></i>
+							</a>
 							<h4 class="h1 l-height-1 m-0">Never miss a turn</h4>
 							<h5 class="m-y-2">Join the Dicord channel to play RPG’s and join discussions.</h5>
-							<a class="cta" href="#" target="_blank">Join here</a>
+							<a class="cta" href="https://discord.com/invite/t5VxU4ZURE" target="_blank" rel="noopener noreferrer nofollow">Join here</a>
 						</div>
 					</div>
 				</div>
@@ -27,7 +29,7 @@
 								<h5>Reach out to us here:</h5>
 								<ul role="navigation" class="menu">
 									<li>
-										<a href="#" target="_blank" rel="noopener noreferrer nofollow">
+										<a href="https://discord.com/invite/t5VxU4ZURE" target="_blank" rel="noopener noreferrer nofollow">
 											<i class="fa fa-discord fa-2x"></i>
 										</a>
 									</li>

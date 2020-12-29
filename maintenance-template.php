@@ -6,7 +6,7 @@
 
 get_header(); 
 ?>
-	<div style="height: 100vh; padding-top: 10vh; background-image: url('<?= get_template_directory_uri() . '/screenshot.png' ?>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+	<div style="height: 100vh; padding-top: 10vh; background-image: url('<?= get_template_directory_uri() . '/screenshot.png' ?>'); background-repeat: no-repeat; background-position: top; background-size: cover;">
 		<div class="grid-x align-center">
 		    <main class="main small-10 cell text-center" role="main">
  
@@ -19,7 +19,7 @@ get_header();
 	</div> 
 <?php get_footer(); ?>
 <style>
-	#top-bar-menu {
+	header.header {
 		display: none;
 	}
 </style>
