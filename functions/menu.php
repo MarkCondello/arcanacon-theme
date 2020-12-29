@@ -3,8 +3,6 @@
 register_nav_menus(
 	array(
 		'main-nav'		=> __( 'The Main Menu', 'jointswp' ),		// Main nav in header
-		// 'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'jointswp' ),	// Off-Canvas nav
-		// 'footer-links'	=> __( 'Footer Links', 'jointswp' )			// Secondary nav in footer
 	)
 );
 
@@ -29,50 +27,15 @@ class Topbar_Menu_Walker extends Walker_Nav_Menu {
 		$output .= "\n$indent<ul class=\"menu\">\n";
 	}
 }
- 
-
-function custom_active_item_classes($classes = array(), $menu_item = false){            
-	global $post;
-	$classes[] = ($menu_item->url == get_post_type_archive_link($post->post_type)) ? 'current-menu-item active' : '';
-	return $classes;
-}
-add_filter( 'nav_menu_css_class', 'custom_active_item_classes', 10, 2 );
-
-// The Footer Menu
-// function joints_footer_links() {
-// 	wp_nav_menu(array(
-// 		'container'			=> 'false',				// Remove nav container
-// 		'menu_id'			=> 'footer-links',		// Adding custom nav id
-// 		'menu_class'		=> 'menu',				// Adding custom nav class
-// 		'theme_location'	=> 'footer-links',		// Where it's located in the theme
-// 		'depth'				=> 0,					// Limit the depth of the nav
-// 		'fallback_cb'		=> ''					// Fallback function
-// 	));
-// } /* End Footer Menu */
-
-// Header Fallback Menu
-function joints_main_nav_fallback() {
-	wp_page_menu( array(
-		'show_home'		=> true,
-		'menu_class'	=> '',		// Adding custom nav class
-		'include'		=> '',
-		'exclude'		=> '',
-		'echo'			=> true,
-		'link_before'	=> '',		// Before each link
-		'link_after'	=> ''		// After each link
-	));
-}
-
-// Footer Fallback Menu
-// function joints_footer_links_fallback() {
-// 	/* You can put a default here if you like */
-// }
 
 // Add Foundation active class to menu
 function required_active_nav_class( $classes, $item ) {
-	if ( $item->current == 1 || $item->current_item_ancestor == true ) {
+	global $post;
+
+	if ( $item->current == 1 || $item->current_item_ancestor == true || $item->url === get_post_type_archive_link($post->post_type)) {
 		$classes[] = 'active';
 	}
+ 
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );

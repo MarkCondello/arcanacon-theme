@@ -145,36 +145,12 @@ add_action( 'init', 'set_custom_posts');
     	https://github.com/CMB2/CMB2
     */
 
-//ToDo: Need to check how this query works below
-//custom query for the events page posts to display only future events
-// function arcanacon_adjust_queries($query){
-
-//     //only on front end, not admin, is an event post type and is not a sub query
-//     if(!is_admin() AND is_post_type_archive('event')  ) { //AND $query->is_main_query()
-//         $today = date('Ymd');
-//         $query->set('meta_key', 'event_date'); //ACF field date value
-//         $query->set('order_by','meta_value_num');
-//         $query->set('order', 'ASC');
-//         $query->set('meta_query', array(
-//             'key' => 'event_date',
-//             'compare' => '>=',
-//             'value' => $today,
-//             'type' => 'numeric'
-//             )
-//         );
-//     }
-//     // echo "<pre>";
-//     // print_r($query);
-// }
-// //before WP queries the posts in the database
-// add_action('pre_get_posts', 'arcanacon_adjust_queries');
-
-
- add_filter ('manage_event_posts_columns', 'arcanacon_filter_event_columns');
+/**
+ * Modify the event list in admin
+ */
+add_filter ('manage_event_posts_columns', 'arcanacon_filter_event_columns');
 function arcanacon_filter_event_columns($columns)
 {
-	// $columns['title'] = __('Title');
-	// $columns['scheduled_date'] = __('Scheduled Date');
 	$columns = array(
 		'cb' => $columns['cb'],
 		'title' => __('Title'),
@@ -192,8 +168,7 @@ function arcanacon_event_column($column, $post_id)
 	if('scheduled_date' === $column):
 		$date = get_field('event_date', $post_id);
 		if(!$date):
-			//echo "Not scheduled.";
-		else:
+ 		else:
 			echo $date;
 		endif;
 	endif;
@@ -207,4 +182,3 @@ function arcanacon_event_column($column, $post_id)
 		endif;
 	endif;
 }
-
