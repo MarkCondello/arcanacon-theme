@@ -10,12 +10,17 @@
                     color: $arc-white;
                 }
             }
+
+            .cta {
+                margin-top: 1.5rem;
+            }
         }
 
         .banner-abstract {
             height: 15%;
             background-color: $arc-purple;
             color: $arc-white;
+            padding: 2rem 0;
 
             .content {
                 height: 100%;
@@ -32,11 +37,14 @@
         @include breakpoint(medium down){
             height: calc(100vh - 100px);
             .banner {
-                height: 75%;
+                height: 70%;
+                padding: 1rem 0;
             }
     
             .banner-abstract {
-                height: 25%;
+                height: 30%;
+                padding: 1rem 0;
+
                 p {
                     line-height: 1;
                 }

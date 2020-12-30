@@ -39,10 +39,10 @@ include get_theme_file_path('/parts/get-future-events.php');
 				</div>
 			</div>	
 		</div>
-		<div class="banner-abstract p-y-2">
+		<div class="banner-abstract">
 			<div class="grid-container h-100">
 				<div class="grid-x h-100">
-					<div class="small-12"> 
+					<div class="small-12 medium-8"> 
 						<div class="content"> 
 							<p class="m-0">
 								<span class="bold">Synopsis: </span><?= mb_strimwidth($futureEvents[0]['post_excerpt'] , 0, 3000, '...') ?>
