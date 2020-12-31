@@ -12,8 +12,6 @@ $archive_page_ID = get_archive_page_id('events');
 $eventPage = get_post($archive_page_ID);	
 $bgImage = (has_post_thumbnail($archive_page_ID) ? wp_get_attachment_image_src( get_post_thumbnail_id($archive_page_ID), 'large' ) : '' );	
 
-// echo "<pre>";
-// print_r($eventPage);
 ?>	
 	<div class="content">
 	<?php downPageBanner($title, $bgImage[0]); ?>
@@ -21,37 +19,42 @@ $bgImage = (has_post_thumbnail($archive_page_ID) ? wp_get_attachment_image_src( 
 	<div class="bg-colour-beige"> 
 		<div class="grid-container "> 
 			<div class="inner-content grid-x grid-margin-x grid-padding-x">
-					<main class="main small-12 cell  p-t-3" role="main"> 
-						<?php if (have_posts()) : 
+				<main class="main small-12 cell  p-t-3" role="main"> 
+			<?php 	if (have_posts()) : 
 							$allEvents = [];
 							$today = date('Ymd');
 
 							while (have_posts()) : 
 							the_post(); 
-
 							$eventDate = get_field('event_date', get_the_ID());
-							$event = [];
-							$event['post_title'] = get_the_title();
-							$event['post_excerpt'] = get_the_excerpt();
-							$event['guid'] = get_the_permalink();
-
-							$event['event_thumbnail'] = get_field('event_thumbnail', get_the_ID()); 
+				
 							if(!empty($eventDate)):
 								$dateArray = explode('/', $eventDate);
-								//format all dates to strtotime,
 								$strDate = strtotime($dateArray[2] . '-' . $dateArray[1] . '-' . $dateArray[0]);
+ 								
 								if($strDate > strtotime($today)):
+									$event = [];
+									$event['post_title'] = get_the_title();
+									$event['post_excerpt'] = get_the_excerpt();
+									$event['guid'] = get_the_permalink();
+									$event['event_thumbnail'] = get_field('event_thumbnail', get_the_ID()); 
 									$event['event_date_strtime'] = $strDate;
 									$event['event_date'] = date("jS F, Y", $strDate);
+									array_push($allEvents, $event); 
 								endif;
-							else:
+ 							else:
 								//no event date set
+								$event = [];
+								$event['post_title'] = get_the_title();
+								$event['post_excerpt'] = get_the_excerpt();
+								$event['guid'] = get_the_permalink();
+								$event['event_thumbnail'] = get_field('event_thumbnail', get_the_ID()); 
 								$date = new DateTime();
 								$date->modify("+1 year");
 								$event['event_date_strtime'] = strtotime($date->format('Ymd'));
 								$event['event_date'] = 'No date is scheduled for this event yet.';
+								array_push($allEvents, $event); 
 							endif;
-							array_push($allEvents, $event); 
 						endwhile; 
 						
 						function order_by_asc($event1, $event2){
@@ -60,12 +63,12 @@ $bgImage = (has_post_thumbnail($archive_page_ID) ? wp_get_attachment_image_src( 
 						usort($allEvents, 'order_by_asc');
 						
 						foreach($allEvents as $key=>$event): ?>
-			<?php 		include(locate_template('./parts/event-row.php', false, false) ); ?>
+					<?php 	include(locate_template('./parts/event-row.php', false, false) ); ?>
 
 						<?php endforeach; ?>	
-						<?php else : ?>		
-							<?php get_template_part( 'parts/content', 'missing' ); ?>
-						<?php endif; ?>
+		<?php 	else : ?>		
+				<?php get_template_part( 'parts/content', 'missing' ); ?>
+		<?php 	endif; ?>
 					</main> <!-- end #main -->
 				</div> <!-- end #inner-content -->
 			</div> <!-- end #content -->
