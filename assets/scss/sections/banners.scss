@@ -8,9 +8,13 @@
     position: relative;
     background-position: center;
 
-    @include breakpoint(medium down){
-       //  height: calc(100vh - 100px);
+    &-down-page{
+        @include breakpoint(small down){
+             //border: 1px solid red;
+            height: 33vh;
+        }
     }
+  
 
     &:before {
         content: '';

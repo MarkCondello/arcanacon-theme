@@ -87,7 +87,6 @@ body {
     .wp-block-heading h1 {
        color: $arc-purple;
        font-family: 'SuperclarendonRegularBold';
-       font-size: 56px;
     }
    
     a {
@@ -101,7 +100,10 @@ body {
     }
 
     .edit-post-layout__content {
-
+        .wp-block-heading h1 {
+            font-size: 56px;
+        }
+        
         .wp-block-heading h2,
         .wp-block-heading h3,
         .wp-block-heading h4,

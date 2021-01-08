@@ -10,7 +10,7 @@ function get_archive_page_id($postType)
 function downPageBanner($title = '', $bgImage = '', $date = null, $ctaText = null, $ctaLink = null)
 {
     ?>
-        <div class="banner" style="background-image: url('<?= $bgImage ?>');">
+        <div class="banner banner-down-page" style="background-image: url('<?= $bgImage ?>');">
 			<div class="banner-content">
 				<div class="grid-container h-100">
 					<div class="grid-x grid-padding-x h-100">

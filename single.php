@@ -5,11 +5,10 @@
 
 get_header(); 
 $title = get_the_title();
-$bgImage = get_the_post_thumbnail_url(get_the_ID());
+$bgImage = get_the_post_thumbnail_url(get_the_ID(), 'downpage-banner');
 $eventDate = get_field('event_date', get_the_ID());
 $ctaText = get_field('cta_text', get_the_ID());
 $ctaLink = get_field('cta_link', get_the_ID());
-
 ?>
 			
 <div class="content">

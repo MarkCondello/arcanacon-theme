@@ -2,7 +2,7 @@
 	
 
 //This filter shows the maintenance template
-add_filter( 'template_include', 'show_maintenance_page', 99 );
+//add_filter( 'template_include', 'show_maintenance_page', 99 );
 function show_maintenance_page( $template ) {
     if ( !current_user_can( 'edit_themes' ) || !is_user_logged_in() ){
         $new_template = locate_template( array( 'maintenance-template.php' ) );
@@ -21,6 +21,9 @@ function joints_theme_support() {
 	
 	// Default thumbnail size
 	set_post_thumbnail_size(1200, 1200, true);
+
+	//custom thumbnail size for event down pages
+	add_image_size('downpage-banner', 1749, 499);
 
 	// Add RSS Support
 	add_theme_support( 'automatic-feed-links' );
