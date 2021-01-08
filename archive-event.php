@@ -10,7 +10,7 @@ get_header();
 $title = post_type_archive_title('', false);
 $archive_page_ID = get_archive_page_id('events');
 $eventPage = get_post($archive_page_ID);	
-$bgImage = (has_post_thumbnail($archive_page_ID) ? wp_get_attachment_image_src( get_post_thumbnail_id($archive_page_ID), 'large' ) : '' );	
+$bgImage = (has_post_thumbnail($archive_page_ID) ? wp_get_attachment_image_src( get_post_thumbnail_id($archive_page_ID), 'downpage-banner' ) : '' );	
 
 ?>	
 	<div class="content">
