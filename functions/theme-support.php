@@ -124,8 +124,6 @@ function joints_theme_support() {
 			),
 		)
 	);
-
-	
 	// Set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.
 	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );	
 	
@@ -141,18 +139,15 @@ function arcanacon_blocks()
 		get_template_directory_uri() . '/build/index.js', 
 		array('wp-blocks', 'wp-components', 'wp-i18n', 'wp-data', 'wp-editor')
 	);
-
 	wp_enqueue_style( 'arcanacon-blocks-styles-editor', get_template_directory_uri() . '/public/css/editor.css', array(), filemtime(get_template_directory() . '/src/scss'), 'all' );
-
 
 	//ToDo: This below should be a loop from an array of blockNames
 	register_block_type(
-		'arcanacon/custom-cta', 
+		'arcanacon/custom-cta',
 		array(
 			'editor_script' => 'arcanacon-blocks-script',
 		)
 	);
-
 	register_block_type(
 		'arcanacon/affiliates',
 		array(
@@ -160,7 +155,6 @@ function arcanacon_blocks()
 			'editor_style'  => 'arcanacon-blocks-styles-editor',
 		)
 	);
-
 	register_block_type(
 		'arcanacon/full-width-block',
 		array(
@@ -168,12 +162,8 @@ function arcanacon_blocks()
 			'editor_style'  => 'arcanacon-blocks-styles-editor',
 		)
 	);
-
-	
 }
-add_action('init', 'arcanacon_blocks'); 
-
-
+add_action('init', 'arcanacon_blocks');
 
 //Adds Featured Image URL to the WP REST Post API Response
 add_action('rest_api_init', 'get_featured_image');
@@ -197,21 +187,8 @@ function arcanacon_get_featured_image ($object, $field_name, $request){
 /* Adds full width block support */
 add_theme_support('align-wide');
 
-function remove_comments($wp_admin_bar){
-	$wp_admin_bar->remove_node('comments');
-}
-add_action('admin_bar_menu', 'remove_comments', 999 );
-
-
-// Define path and URL to the ACF plugin.
-define( 'MY_ACF_PATH', get_stylesheet_directory() . '/includes/advanced-custom-fields/' );
-define( 'MY_ACF_URL', get_stylesheet_directory_uri() . '/includes/advanced-custom-fields/' );
-
-// Include the ACF plugin.
-include_once( MY_ACF_PATH . 'acf.php' );
-
-// Customize the url setting to fix incorrect asset URLs.
-add_filter('acf/settings/url', 'my_acf_settings_url');
-function my_acf_settings_url( $url ) {
-    return MY_ACF_URL;
-}
+// remove edit comments and posts from admin
+add_action('admin_menu', function () {
+	remove_menu_page('edit.php');
+	remove_menu_page('edit-comments.php');
+});

@@ -1,8 +1,5 @@
 const mix = require('laravel-mix'),
-webpack = require('webpack');
-//purgecss = require('@fullhuman/postcss-purgecss');
-
-//require('laravel-mix-purgecss');
+    webpack = require('webpack');
 
 /*
  |--------------------------------------------------------------------------
@@ -28,17 +25,6 @@ mix
         'node_modules/foundation-sites/dist/js/foundation.min.js',
     ], 'public/js/vendor.js')
 
-
-    // .purgeCss({
-    //     extend: {
-    //         content: [
-    //             path.join(__dirname,  "*.php"),
-    //             path.join(__dirname,  "parts/*.php"),
-    //             path.join(__dirname,  "assets/js/vue/*.vue"),
-    //     ],
-    //         whitelistPatterns: [/hljs/],
-    //     },
-    // })
     .options({
         processCssUrls: false,
     })
